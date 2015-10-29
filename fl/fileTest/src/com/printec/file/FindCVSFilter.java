@@ -10,8 +10,8 @@ public class FindCVSFilter implements FileFilter {
 		if ( src.isDirectory() ) {
 			if ( src.getName().equalsIgnoreCase("CVS") ) {
 				System.out.println("CVS dir: " + src.getAbsolutePath());
-				src.listFiles(new DeleteContentFilter());
-				src.delete();
+//				src.listFiles(new DeleteContentFilter());
+//				src.delete();
 			}
 			else {
 				src.listFiles(new FindCVSFilter());
@@ -21,7 +21,7 @@ public class FindCVSFilter implements FileFilter {
 			String filename = src.getName(); 
 			if ( filename.length() > 2 && filename.substring(0, 2).equals(".#") ) {
 				System.out.println("CVS file: " + src.getAbsolutePath());
-				src.delete();
+//				src.delete();
 			}
 		}
 		return false;
